@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template:`
   <header-component></header-component>
-  <home-component></home-component>
+  <router-outlet></router-outlet>
   <footer-component></footer-component>
 `,
   styleUrls: ['./app.component.css']

@@ -1,0 +1,38 @@
+<section class="hero">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title has-text-light has-text-centered">Contáctanos</h1>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        
+        <form (ngSubmit)="submitForm()" #contactForm="ngForm">
+            <div class="field">
+                <label for="" class="label">Nombre</label>
+                <input type="text" name="name" class="input" placeholder="Gabriel Romero" [(ngModel)]="name" #nameInput="ngModel" required>
+                <div class="help is-error" *ngIf="nameInput.invalid && nameInput.dirty">
+                    Campo Requerido
+                </div>
+            </div>
+            <div class="field">
+                <label for="" class="label">Email</label>
+                <input type="email" name="email" class="input" placeholder="Gabrielromero2314@gmail.com" [(ngModel)]="email" #emailInput="ngModel" required email>
+                <div class="help is-error" *ngIf="emailInput.invalid && emailInput.dirty">
+                    Campo Requerido
+                </div>
+            </div>
+            <div class="field">
+                <label for="" class="label">Mensaje</label>
+                <textarea name="message" class="textarea" placeholder="Escribe un Mensaje..." [(ngModel)]="message"></textarea>
+            </div>
+            <div class="buttons is-centered">
+                <button type="submit" class="button is-large is-centered" [disabled]="contactForm.invalid">
+                    Enviar
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
